@@ -55,21 +55,21 @@ class bot:
             self.wait.until(EC.presence_of_element_located((By.XPATH ,path_to_keys))).send_keys(friends[3] + ' ' + friends[0] + ' ' + friends[1] + ' '+ friends[2] + ' ')
             self.wait.until(EC.element_to_be_clickable((By.XPATH ,path_to_submit))).click()
             del friends[:]
-            time.sleep(200) #βάλε χρόνο σε sec
+            time.sleep(200) #βάλε χρόνο σε sec time for comment
         
     def text(self):
-        friends = ['@constantina_zf','@theotziol','@kleopats', '@dimitristziolas',
-                   '@xaroula_georgoula_', '@thodwriss', '@_dousmanhss_']#δήλωσε άτομα που θα τους τα κάνεις μπάλες
+        friends = ['@example_tag_name','@','@', '@',
+                   '@', '@', '@']#δήλωσε άτομα που θα τους τα κάνεις μπάλες @tag names
         text = ['nai re', 'pame', 'ok', 'one more', 'yeah', 'cool',
-                'winner winner chicken dinner','omg','joey doesnt share food'] #γραφω χαζομάρες να μην ειναι μόνο ταγκ
+                'winner winner chicken dinner','omg','joey doesnt share food'] #γραφω χαζομάρες να μην ειναι μόνο ταγκ (some text)
         friend_to_comment = []
         while True:
-            num = rndm(0, len(friends))
+            num = rndm(0, len(friends)-1)
             if friends[num] not in friend_to_comment:
                 friend_to_comment.append(friends[num])
                 if len(friend_to_comment) == 3:
                     break
-        text_num = rndm(0, len(text))
+        text_num = rndm(0, len(text)-1)
         friend_to_comment.append(text[text_num])
         for item in friend_to_comment:
             yield item
