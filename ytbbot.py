@@ -29,6 +29,7 @@ path_to_comment = '//*[@id="react-root"]/section/main/div/div[1]/article/div/div
 path_comment = '//*[@id="react-root"]/section/main/div/div[1]/article/div/div[3]/div/div/section[3]/div/form/textarea'
 path_post = '//*[@id="react-root"]/section/main/div/div[1]/article/div[3]/section[3]/div/form/button[2]'
 id_textarea = 'Ypffh'
+class_post = 'sqdOP yWX7d    y3zKF     '
 driver = wd.Chrome()
 driver.get(site)
 
@@ -74,7 +75,7 @@ while t < 10:
     wait.until(EC.element_to_be_clickable((By.XPATH,path_to_comment))).click()
     time.sleep(3)
     wait.until(EC.presence_of_element_located((By.CLASS_NAME ,id_textarea))).send_keys(friends[random_list[0]] + ' ' + friends[random_list[1]] + ' ' + friends[random_list[2]] + ' ' )
-    #wait.until(EC.element_to_be_clickable((By.XPATH,path_post))).click()
+    #wait.until(EC.element_to_be_clickable((By.CLASS_NAME,class_post))).click()
     time.sleep(3)
     t = t + 1
     del random_list
